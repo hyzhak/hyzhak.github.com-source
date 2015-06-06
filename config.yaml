@@ -1,0 +1,72 @@
+# Theme name.
+theme: tiny
+
+# site globals
+site:
+  url: http://wave-developers.github.io
+  name: Wave Developers
+  description: Wave developers meetup communitry
+  build: dist
+  keywords: balkan,albania,bosnia and herzegovina,croatia,makedonia,montenegro,serbia,events,programming,java,javascript,python,ruby,c,angularjs,nodejs,ionj,startup,DIY
+
+# Main menu
+menus:
+  - id: next
+    active: true
+    name: Next Event
+    url: /next.html
+
+  - id: call
+    name: Call 4 Speakers
+    url: /call.html
+
+  - id: support
+    name: Support Us
+    url: /support.html
+
+  - id: about
+    name: About
+    url: /about.html
+
+# next event
+
+next:
+  when: the end of june
+  loc:
+    name: Bar, Montenegro
+    lat: 42.10
+    lng: 19.10
+    zoom: 11
+
+# Disqus configuration, comment these lines to disable it
+# Services
+
+disqus:
+  shortname: wave-develoeprs-gh-page
+
+email:
+  account: wave.developers.team@gmail.com
+
+facebook:
+  account: Wave-Developers/547751192031667
+  appid: 1150950894931026
+  groups:
+    en:
+      id: 656571341153398
+      title: English speaking group
+    ru:
+      id: ex.yu.developers
+      title: Русскоговорящая группа
+
+github:
+  account: wave-developers
+
+google:
+  analytics: UA-38043860-8 # Google analytics
+  verification: "-WuDSQXcQ3LYVkL0N9vaxK-5xrxXS4I-nB9t5qreNjU" # Google webmaster verification
+
+twitter:
+  account: hyzhak_en
+
+youtube:
+  account: UCGu3STPtjYgKHz0g4DM9Evw
