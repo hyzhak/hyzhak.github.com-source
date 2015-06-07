@@ -1,6 +1,12 @@
 .row
 each project in projects
    .col-sm-3
-      div= project.title
-      div= project.img.small
-      a(href=project.path) More
+      .bg-warning.panel.panel-default
+         .panel-body
+            h2= project.title
+            div.small= project.img
+            if project.tags
+               each tag in project.tags
+                  span=tag
+                  span
+            a(href=project.path) More

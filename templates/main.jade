@@ -10,11 +10,38 @@ html
     include ./partials/googleVerification
     link(href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css', rel='stylesheet')
     link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', rel='stylesheet')
+    link(href='//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/flatly/bootstrap.min.css', rel='stylesheet')
+    link(href='/css/main.css', rel='stylesheet')
   body
-    h1= title
     block content
-    .container
-      include ./partials/facebookLike
+    footer.text-center
+      .footer-above
+        .container
+          .footer-col
+            include ./partials/facebookLike
+            ul.list-inline
+              li
+                a(href='http://facebook.com/' + config.facebook.account, target='_blank').btn-social.btn-outline
+                  i.fa.fa-fw.fa-facebook
+              li
+                a(href='http://twitter.com/' + config.twitter.account, target='_blank').btn-social.btn-outline
+                  i.fa.fa-fw.fa-twitter
+              li
+                a(href='https://linkedin.com/in/' + config.linkedin.account, target='_blank').btn-social.btn-outline
+                  i.fa.fa-fw.fa-linkedin
+              li
+                a(href='https://github.com/' + config.github.account, target='_blank').btn-social.btn-outline
+                  i.fa.fa-fw.fa-github
 
-    include ./partials/googleAnalytics
+      .footer-below
+        span Based on Bootswatch theme -
+          a(href='http://bootswatch.com/flatly/', target='_blank') flatly
+          |. and
+          |
+          a(href='https://github.com/ironsummitmedia/startbootstrap-freelancer/', target='_blank') startbootstrap-freelancer
+          | &nbsp;of ironsummitmedia
+        div
+          | (C) hyzhak 2015
+
     include ./partials/facebookLikeScript
+    include ./partials/googleAnalytics

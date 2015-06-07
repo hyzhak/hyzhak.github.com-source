@@ -1,7 +1,13 @@
 extends main
 
 block content
-  article#article
-    h1= title
-    div hello
-    div!= content
+  .container
+    .jumbotron
+      h1 title
+      p!= contents
+      p
+        .row
+          .col-sm-3.col-sm-offset-9.text-right
+            a(href='/').btn.btn-default back
+            span &nbsp;
+            a(href=url, target='_blank').btn.btn-primary try it

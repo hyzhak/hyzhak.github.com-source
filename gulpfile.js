@@ -4,8 +4,12 @@ var assign = require('lodash').assign;
 var gulp = require('gulp');
 var debug = require('gulp-debug');
 var frontMatter = require('gulp-front-matter');
+var imagemin = require('gulp-imagemin');
+var less = require('gulp-less');
 var livereload = require('gulp-livereload');
 var gulpsmith = require('gulpsmith');
+
+var jpegtran = require('imagemin-jpegtran');
 
 var collections = require('metalsmith-collections');
 var markdown = require('metalsmith-markdown');
@@ -20,7 +24,7 @@ gulp.task('clean:dist', function (done) {
 	del(['dist/*'], done);
 });
 
-gulp.task('build:all', function () {
+gulp.task('build:html', function () {
 	return gulp.src(['./pages/**/*', './config.yaml'])
 		.pipe(frontMatter().on('data', function (file) {
 			assign(file, file.frontMatter);
@@ -63,15 +67,35 @@ gulp.task('build:all', function () {
 		.pipe(gulp.dest('./dist'));
 });
 
+gulp.task('build:images', function() {
+	return gulp.src('assets/**/*.jpg')
+		.pipe(imagemin({
+			progressive: true,
+			use: [jpegtran()]
+		}))
+		.pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('build:styles', function() {
+	return gulp.src('./templates/styles/**/*.less')
+		.pipe(less({}))
+		.pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('build:all', gulp.parallel(
+	'build:html',
+	'build:images',
+	'build:styles'));
+
 gulp.task('watch', function () {
 	livereload.listen();
 	gulp.watch([
+			'config.yaml',
+			'assets/**/*',
 			'pages/**/*',
-			'templates/**/*',
-			'projects/**/*'
+			'templates/**/*'
 		],
 		gulp.series('build:all'));
 });
 
-//gulp.task('default', ['clean:dist', 'build:hbs']);
 gulp.task('default', gulp.series('clean:dist', 'build:all'));

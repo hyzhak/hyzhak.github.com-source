@@ -11,5 +11,5 @@ if config.google.analytics
       a.src = g;
       m.parentNode.insertBefore(a, m)
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', '{{config.google.analytics}}', 'auto');
+    ga('create', '#{config.google.analytics}', 'auto');
     ga('send', 'pageview');

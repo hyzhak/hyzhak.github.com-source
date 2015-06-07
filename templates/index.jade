@@ -1,7 +1,20 @@
 extends main
 
 block content
+  header.bg-success.text-center
+    .container
+      .row
+        .col-lg-12
+          img(src=config.site.img, width=256, height=256).img-responsive.header-image
+          .intro-text
+            span.name= config.site.name
+            hr.star-light
+            span.description= config.site.description
+
   article.project-list.container
-    div.row
-      h1 Projects
+    .row
+      .col-lg-12.text-center
+        h1 Projects
+        hr.star-primary
+
     include ./partials/projectsList
