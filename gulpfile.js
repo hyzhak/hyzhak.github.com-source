@@ -11,14 +11,16 @@ var gulpsmith = require('gulpsmith');
 
 var jpegtran = require('imagemin-jpegtran');
 
+var path = require('path');
+
 var collections = require('metalsmith-collections');
 var markdown = require('metalsmith-markdown');
 var metadata = require('metalsmith-metadata');
 var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 
-//TODO: add pagination, gulp-imagemin, gulp-sourcemaps
-//TODO: add to jade moment
+//TODO: add pagination ?, gulp-sourcemaps
+//TODO: add to jade moment or somethings
 
 gulp.task('clean:dist', function (done) {
 	del(['dist/*'], done);
@@ -78,7 +80,9 @@ gulp.task('build:images', function() {
 
 gulp.task('build:styles', function() {
 	return gulp.src('./templates/styles/**/*.less')
-		.pipe(less({}))
+		.pipe(less({
+			paths: [ path.join(__dirname, 'node_modules', 'bootswatch') ]
+		}))
 		.pipe(gulp.dest('dist/css'));
 });
 

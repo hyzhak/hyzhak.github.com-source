@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/hyzhak/hyzhak.github.com-source",
   "devDependencies": {
+    "bootswatch": "^3.3.4",
     "del": "^1.2.0",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
     "gulp-front-matter": "^1.2.3",
