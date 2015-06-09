@@ -1,13 +1,33 @@
 extends main
 
 block content
+  header.bg-primary.text-center
+    .container
+      .row
+        .col-lg-12
+          if img && img.square
+            img(src=img.square, width=256, height=256).img-responsive.header-image
+
+          .intro-text
+            span.name= title
+            hr.star-light-on-primary
+            span.description= config.site.description
+
+  article.container
+    .row
+      .col-lg-12.text-center
+        p!= contents
+    .row
+      .col-xs-6.text-right
+        a(href='/').btn.btn-default
+          i.fa.fa-chevron-left
+          | &nbsp; back
+      .col-xs-6.text-left
+        a(href=url, target='_blank').btn.btn-danger
+          | try it &nbsp;
+          i.fa.fa-chevron-right
+
   .container
-    .jumbotron
-      h1 title
-      p!= contents
-      p
-        .row
-          .col-sm-3.col-sm-offset-9.text-right
-            a(href='/').btn.btn-default back
-            span &nbsp;
-            a(href=url, target='_blank').btn.btn-primary try it
+    .row
+      .col-lg-12.text-center
+        hr.star-primary

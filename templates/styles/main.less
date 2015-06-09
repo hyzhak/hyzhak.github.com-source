@@ -40,7 +40,8 @@ footer {
 }
 
 hr.star-light,
-hr.star-primary {
+hr.star-primary,
+hr.star-light-on-primary {
   margin: 25px auto 30px;
   padding: 0;
   max-width: 250px;
@@ -50,7 +51,8 @@ hr.star-primary {
 }
 
 hr.star-light:after,
-hr.star-primary:after {
+hr.star-primary:after,
+hr.star-light-on-primary:after {
   content: "\f005";
   display: inline-block;
   position: relative;
@@ -67,6 +69,15 @@ hr.star-light {
 hr.star-light:after {
   color: #fff;
   background-color: #18bc9c;
+}
+
+hr.star-light-on-primary {
+  border-color: #fff;
+}
+
+hr.star-light-on-primary:after {
+  color: #fff;
+  background-color: @brand-primary;
 }
 
 hr.star-primary {
