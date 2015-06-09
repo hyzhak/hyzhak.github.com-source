@@ -14,6 +14,17 @@ block content
             span.description= config.site.description
 
   article.container
+    if source
+      br
+      section.row
+        .col-xs-6.text-right
+          iframe(src='https://ghbtns.com/github-btn.html?user=' + source.user + '&repo=' + source.repo + '&type=star&count=true&size=large',
+                 frameborder="0", scrolling="0", width="160px", height="30px")
+
+        .col-xs-6.text-left
+          iframe(src='https://ghbtns.com/github-btn.html?user=' + source.user + '&repo=' + source.repo + '&type=watch&count=true&size=large&v=2',
+                 frameborder="0", scrolling="0", width="160px", height="30px")
+
     .row
       .col-lg-12.text-center
         p!= contents
@@ -22,10 +33,17 @@ block content
         a(href='/').btn.btn-default
           i.fa.fa-chevron-left
           | &nbsp; back
-      .col-xs-6.text-left
-        a(href=url, target='_blank').btn.btn-danger
-          | try it &nbsp;
-          i.fa.fa-chevron-right
+      if url
+        .col-xs-6.text-left
+          a(href=url, target='_blank').btn.btn-danger
+            | try it &nbsp;
+            i.fa.fa-chevron-right
+      else if source
+        .col-xs-6.text-left
+          a(href='https://github.com/' + source.user + '/' + source.repo + '#readme', target='_blank').btn.btn-danger
+            | try it &nbsp;
+            i.fa.fa-chevron-right
+
 
   .container
     .row

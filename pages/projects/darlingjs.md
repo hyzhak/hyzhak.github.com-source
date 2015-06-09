@@ -6,9 +6,9 @@ img:
     square: /images/projects/darlingjs-256x256.jpg
 short: Entity-Component-System based javascript game engine with dependency injections and modules.
 tags: [javascript, gamedev]
-sources: 
+source:
     user: darlingjs
-    project: darlingjs
+    repo: darlingjs
 url: http://darlingjs.github.io
 template: project.jade
 ---
