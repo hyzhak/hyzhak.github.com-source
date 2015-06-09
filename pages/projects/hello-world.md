@@ -1,8 +1,6 @@
 ---
 title: Hello-World
 date: 2015-03-04
-img:
-    small: small-image.jpg
 template: project.jade
 ---
 

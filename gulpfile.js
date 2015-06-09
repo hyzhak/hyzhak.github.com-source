@@ -69,7 +69,8 @@ gulp.task('build:html', function () {
 		.pipe(gulp.dest('./dist'));
 });
 
-gulp.task('build:images', function() {
+
+gulp.task('build:images:assets', function() {
 	return gulp.src('assets/**/*.jpg')
 		.pipe(imagemin({
 			progressive: true,
@@ -77,6 +78,18 @@ gulp.task('build:images', function() {
 		}))
 		.pipe(gulp.dest('dist/images'));
 });
+
+gulp.task('build:images:projects', function() {
+	return gulp.src('pages/**/*.jpg')
+		.pipe(imagemin({
+			progressive: true,
+			use: [jpegtran()]
+		}))
+		.pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('build:images', gulp.parallel('build:images:assets', 'build:images:projects'));
+
 
 gulp.task('build:styles', function() {
 	return gulp.src('./templates/styles/**/*.less')

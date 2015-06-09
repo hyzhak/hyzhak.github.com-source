@@ -1,12 +1,17 @@
 .row
 each project in projects
-   .col-sm-3
-      .bg-warning.panel.panel-default.project-panel
-         .panel-body
-            h2= project.title
-            div.small= project.img
-            if project.tags
-               each tag in project.tags
-                  span=tag
-                  span
-            a(href=project.path) More
+   a(href=project.path)
+      .col-sm-6.col-md-4.col-lg-3
+         .panel.panel-primary.project-panel
+            if project.img && project.img.small
+               .panel-heading(style='background-image: url(' + project.img.small + ')')
+                  h2.text-center.panel-title= project.title
+            else
+               .panel-heading
+                  h2.text-center.panel-title= project.title
+            .panel-body
+               p= project.short
+               if project.tags
+                  each tag in project.tags
+                     span= tag
+                     span=' '

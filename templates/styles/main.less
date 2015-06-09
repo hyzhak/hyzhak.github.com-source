@@ -109,9 +109,23 @@ hr.star-primary:after {
 
 .project-panel {
   border-style: dashed;
+  text-decoration: none;
+  color: @text-color;
+  .panel-title {
+    margin-top: 30px;
+    font-size: 24px;
+  }
+  .panel-heading {
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .panel-body {
+    height: 160px;
+  }
   &:hover {
     border-style: solid;
-    background-color: @brand-primary;
-    color: white;
+//    background-color: @brand-primary;
+//    color: white;
   }
 }
