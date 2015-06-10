@@ -2,6 +2,7 @@
 site:
   url: http://hyzhak.github.io
   name: Eugene Krevenets
+  postfix: profile
   img: /images/me.jpg
   description: Full stack developer (node.js, python, javascript)
   build: dist

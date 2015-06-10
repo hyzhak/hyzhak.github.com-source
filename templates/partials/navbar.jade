@@ -1,0 +1,19 @@
+nav.navbar.navbar-default.navbar-fixed-top.navbar-shrink
+   .container-fluid
+      .navbar-header.page-scroll
+         button(area-expanded='false',
+            data-target="#bs-example-navbar-collapse-1",
+            data-toggle="collapse",
+            type="button").navbar-toggle.collapsed
+            span.sr-only TOggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+         a.navbar-brand=config.site.name
+            if config.site.postfix
+               | &nbsp; &middot; &nbsp;
+               small=config.site.postfix
+      .collapse.navbar-collapse#bs-example-navbar-collapse-1
+         ul.nav.navbar-nav.navbar-right
+            li: a(href='/#projects') Projects
+            li: a(href='/#links') Links

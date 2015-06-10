@@ -13,6 +13,8 @@ html
     link(href='//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/flatly/bootstrap.min.css', rel='stylesheet')
     link(href='/css/main.css', rel='stylesheet')
   body
+    include ./partials/navbar
+
     block content
     footer.text-center
       .footer-above
@@ -33,7 +35,7 @@ html
                 a(href='https://github.com/' + config.github.account, target='_blank').btn-social.btn-outline
                   i.fa.fa-fw.fa-github
 
-      .footer-below
+      .footer-below#links
         span Based on Bootswatch theme -
           a(href='http://bootswatch.com/flatly/', target='_blank') flatly
           |. and&nbsp;
@@ -42,5 +44,9 @@ html
         div
           | (C) hyzhak 2015
 
+    script(src="http://code.jquery.com/jquery-2.1.4.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+
     include ./partials/facebookLikeScript
     include ./partials/googleAnalytics
+
