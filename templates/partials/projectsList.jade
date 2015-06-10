@@ -12,7 +12,7 @@ each project in projects
             .panel-body
                p= project.short
                if project.tags
-                  p
+                  small
                      each tag, index in project.tags
                         span= tag
                         unless index == project.tags.length - 1
