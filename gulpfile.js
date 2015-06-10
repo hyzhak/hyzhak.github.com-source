@@ -99,7 +99,7 @@ gulp.task('build:styles', function() {
 		.pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('build:all', gulp.parallel(
+gulp.task('build', gulp.parallel(
 	'build:html',
 	'build:images',
 	'build:styles'));
@@ -115,4 +115,4 @@ gulp.task('watch', function () {
 		gulp.series('build:all'));
 });
 
-gulp.task('default', gulp.series('clean:dist', 'build:all'));
+gulp.task('default', gulp.series('clean:dist', 'build'));
