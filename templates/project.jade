@@ -16,7 +16,15 @@ block content
           .intro-text
             span.name= title
             hr.star-light-on-primary
-            span.description= config.site.description
+            span.description
+              if tags
+                  each tag, index in tags
+                    span= tag
+                    unless index == tags.length - 1
+                      |  &middot
+                      |
+              else
+                span= project
         .col-sm-1.hidden-xs
           if next
             a(href='/' + next.path).project-next-arrow

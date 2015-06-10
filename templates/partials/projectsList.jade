@@ -12,6 +12,9 @@ each project in projects
             .panel-body
                p= project.short
                if project.tags
-                  each tag in project.tags
-                     span= tag
-                     span=' '
+                  p
+                     each tag, index in project.tags
+                        span= tag
+                        unless index == project.tags.length - 1
+                           |  &middot
+                           |  

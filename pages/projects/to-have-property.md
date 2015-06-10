@@ -2,7 +2,7 @@
 title: to-have-property
 date: 2015-04-19
 short: toHaveProperty matcher for Jasmine unit test suit
-tags: [javascript, jasmine, unittesting]
+tags: [javascript, jasmine, matcher, unittesting]
 source:
     user: hyzhak
     repo: to-have-property
