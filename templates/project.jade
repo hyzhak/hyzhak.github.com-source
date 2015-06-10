@@ -7,11 +7,29 @@ block content
         .col-lg-12
           if img && img.square
             img(src=img.square, width=256, height=256).img-responsive.header-image
-
+      .row
+        .col-sm-1.hidden-xs
+          if previous
+            a(href='/' + previous.path).project-previous-arrow
+              i.fa.fa-angle-double-left
+        .col-sm-10
           .intro-text
             span.name= title
             hr.star-light-on-primary
             span.description= config.site.description
+        .col-sm-1.hidden-xs
+          if next
+            a(href='/' + next.path).project-next-arrow
+              i.fa.fa-angle-double-right
+      .row.visible-xs
+        .col-xs-6.text-right
+          if previous
+            a(href='/' + previous.path).project-previous-arrow
+              i.fa.fa-angle-double-left
+        .col-xs-6.text-left
+          if next
+            a(href='/' + next.path).project-next-arrow
+              i.fa.fa-angle-double-right
 
   article.container
     if source
@@ -31,18 +49,18 @@ block content
     .row
       .col-xs-6.text-right
         a(href='/').btn.btn-default
-          i.fa.fa-chevron-left
+          i.fa.fa-chevron-up
           | &nbsp; back
       if url
         .col-xs-6.text-left
           a(href=url, target='_blank').btn.btn-danger
             | try it &nbsp;
-            i.fa.fa-chevron-right
+            i.fa.fa-cube
       else if source
         .col-xs-6.text-left
           a(href='https://github.com/' + source.user + '/' + source.repo + '#readme', target='_blank').btn.btn-danger
             | try it &nbsp;
-            i.fa.fa-chevron-right
+            i.fa.fa-cube
 
 
   .container
