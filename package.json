@@ -4,14 +4,15 @@
   "description": "personal projects of Eugene Krevenets",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp build",
+    "test": "echo \"Doesn't have tests yet!\""
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/hyzhak/hyzhak.github.com-source.git"
   },
   "keywords": [
-    "portfolio"
+    "portfolio", "hyzhak", "my projects"
   ],
   "author": "Eugene Krevenets <ievgenii.krevenets@gmail.com> (hyzhak.github.io)",
   "license": "MIT",
@@ -23,6 +24,8 @@
     "bootswatch": "https://github.com/thomaspark/bootswatch/archive/v3.3.4+1.tar.gz",
     "del": "^1.2.0",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
+    "gulp-debug": "^2.0.1",
+    "gulp-extname": "^0.2.0",
     "gulp-front-matter": "^1.2.3",
     "gulp-imagemin": "^2.2.1",
     "gulp-less": "^3.0.3",
@@ -39,8 +42,6 @@
     "metalsmith-templates": "^0.7.0"
   },
   "dependencies": {
-    "gulp-debug": "^2.0.1",
-    "gulp-extname": "^0.2.0",
     "lodash": "^3.9.3"
   }
 }
