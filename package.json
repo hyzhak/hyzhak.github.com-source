@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/hyzhak/hyzhak.github.com-source",
   "devDependencies": {
-    "bootswatch": "^3.3.4",
+    "bootswatch": "https://github.com/thomaspark/bootswatch/archive/v3.3.4+1.tar.gz",
     "del": "^1.2.0",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
     "gulp-front-matter": "^1.2.3",
