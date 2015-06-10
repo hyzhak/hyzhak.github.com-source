@@ -27,7 +27,7 @@ gulp.task('clean:dist', function (done) {
 });
 
 gulp.task('build:html', function () {
-	return gulp.src(['./pages/**/*', './config.yaml'])
+	return gulp.src(['./pages/**/*.md', './config.yaml'])
 		.pipe(frontMatter().on('data', function (file) {
 			assign(file, file.frontMatter);
 			delete file.frontMatter;
