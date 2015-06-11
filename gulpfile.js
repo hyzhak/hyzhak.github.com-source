@@ -64,7 +64,7 @@ gulp.task('build:html', function () {
 				}
 			}))
 		)
-		.pipe(debug({title: 'build:all'}))
+		.pipe(debug({title: 'build:html'}))
 		.pipe(livereload())
 		.pipe(gulp.dest('./dist'));
 });
@@ -112,7 +112,7 @@ gulp.task('watch', function () {
 			'pages/**/*',
 			'templates/**/*'
 		],
-		gulp.series('build:all'));
+		gulp.series('build'));
 });
 
 gulp.task('default', gulp.series('clean:dist', 'build'));

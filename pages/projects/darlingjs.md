@@ -3,7 +3,7 @@ title: darling.js
 date: 2015-04-19
 img:
     small: /images/projects/darlingjs.jpg
-    square: /images/projects/darlingjs-256x256.jpg
+    square: /images/projects/darlingjs-256x256-2.jpg
 short: Entity-Component-System based javascript game engine with dependency injections and modules.
 tags: [gamedev, javascript]
 source:
