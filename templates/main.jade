@@ -20,7 +20,11 @@ html
       .footer-above
         .container
           .footer-col
-            include ./partials/facebookLike
+            p
+              include ./partials/facebookLike
+            p
+              include ./partials/githubFollow
+
             ul.list-inline
               li
                 a(href='http://facebook.com/' + config.facebook.account, target='_blank').btn-social.btn-outline
@@ -50,6 +54,7 @@ html
 
     script(src="http://code.jquery.com/jquery-2.1.4.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+    script(async, defer, id="github-bjs", src="https://buttons.github.io/buttons.js")
 
     include ./partials/facebookLikeScript
     include ./partials/googleAnalytics

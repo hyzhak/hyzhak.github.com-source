@@ -1,0 +1,7 @@
+if config.github.account
+   a(href='https://github.com/' + config.github.account,
+     data-style='mega',
+     data-count-href='/' + config.github.account + '/followers',
+     data-count-api='/users/' + config.github.account + ' #followers',
+     data-count-aria-label='# followers on GitHub',
+     aria-label='Follow @' + config.github.account + ' on GitHub').github-button= 'Follow @' + config.github.account
