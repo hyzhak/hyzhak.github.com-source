@@ -12,7 +12,9 @@
     "url": "https://github.com/hyzhak/hyzhak.github.com-source.git"
   },
   "keywords": [
-    "portfolio", "hyzhak", "my projects"
+    "portfolio",
+    "hyzhak",
+    "my projects"
   ],
   "author": "Eugene Krevenets <ievgenii.krevenets@gmail.com> (hyzhak.github.io)",
   "license": "MIT",
@@ -42,6 +44,9 @@
     "metalsmith-templates": "^0.7.0"
   },
   "dependencies": {
-    "lodash": "^3.9.3"
+    "debug": "^2.2.0",
+    "lodash": "^3.9.3",
+    "q": "^1.4.1",
+    "request-promise": "^0.4.2"
   }
 }

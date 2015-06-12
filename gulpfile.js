@@ -1,5 +1,5 @@
 var del = require('del');
-var assign = require('lodash').assign;
+var _ = require('lodash');
 
 var gulp = require('gulp');
 var debug = require('gulp-debug');
@@ -11,16 +11,22 @@ var gulpsmith = require('gulpsmith');
 
 var jpegtran = require('imagemin-jpegtran');
 
-var path = require('path');
-
 var collections = require('metalsmith-collections');
 var markdown = require('metalsmith-markdown');
 var metadata = require('metalsmith-metadata');
 var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 
+var path = require('path');
+
+//var process = require('process');
+
+var updateProjectsFromGithub = require('./gulp/updateProjectsFromGithub');
+
 //TODO: add pagination ?, gulp-sourcemaps
 //TODO: add to jade moment or somethings
+
+
 
 gulp.task('clean:dist', function (done) {
 	del(['dist/*'], done);
@@ -29,7 +35,7 @@ gulp.task('clean:dist', function (done) {
 gulp.task('build:html', function () {
 	return gulp.src(['./pages/**/*.md', './config.yaml'])
 		.pipe(frontMatter().on('data', function (file) {
-			assign(file, file.frontMatter);
+			_.assign(file, file.frontMatter);
 			delete file.frontMatter;
 		}))
 		.pipe(gulpsmith()
@@ -38,9 +44,14 @@ gulp.task('build:html', function () {
 			}))
 			.use(collections({
 				projects: {
-					pattern: 'projects/*.md',
-					sortBy: 'publishDate'
+					pattern: 'projects/*.md'
 				}
+			}))
+			.use(updateProjectsFromGithub({
+				clientId: process.env.UPDATE_PROJECTS_FROM_GITHUB_CLIENT_ID,
+				secret: process.env.UPDATE_PROJECTS_FROM_GITHUB_SECRET,
+				sortBy: 'stars',
+				reverse: true
 			}))
 			.use(markdown())
 			.use(permalinks())
