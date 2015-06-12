@@ -1,5 +1,5 @@
 ---
-tags: [helper, jasmine, javascript, unit testing]
+tags: [angular, angular-ui, javascript, infinity-scrolling]
 source:
     user: hyzhak
     repo: ui-select-infinity
