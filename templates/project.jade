@@ -38,6 +38,11 @@ block content
           if next
             a(href='/' + next.path).project-next-arrow
               i.fa.fa-angle-double-right
+      .row.text-center
+        .col-xs-12.try-it
+          a(href=url, target='_blank').btn.btn-danger
+            | try it &nbsp;
+            i.fa.fa-cube
 
   article.container
     if source
@@ -52,15 +57,17 @@ block content
                  frameborder="0", scrolling="0", width="160px", height="30px")
 
     .row
-      .col-lg-12.text-center
+      .col-lg-12
         if contents
-          p!= contents
+          p.text-center!= contents
+        else if readme
+          p!= readme
         else if short
-          p!= short
+          p.text-center!= short
     .row
       .col-xs-6.text-right
-        a(href='/').btn.btn-default
-          i.fa.fa-chevron-up
+        a(href='/#projects').btn.btn-default
+          i.fa.fa-chevron-left
           | &nbsp; back
       if url
         .col-xs-6.text-left

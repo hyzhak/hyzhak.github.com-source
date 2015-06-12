@@ -6,5 +6,3 @@ source:
     
 template: project.jade
 ---
-
-extension of ui-select to support infinity list of items

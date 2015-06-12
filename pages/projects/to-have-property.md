@@ -6,5 +6,3 @@ source:
     
 template: project.jade
 ---
-
-*toHaveProperty* matcher for Jasmine [http://jasmine.github.io/](http://jasmine.github.io/) to check whether object has property or not.

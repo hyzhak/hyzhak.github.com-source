@@ -6,5 +6,3 @@ source:
     
 template: project.jade
 ---
-
-toHaveMethod matcher for Jasmine (http://jasmine.github.io/) to check whether object has method or not.

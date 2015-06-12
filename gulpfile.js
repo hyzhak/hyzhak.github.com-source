@@ -11,6 +11,8 @@ var gulpsmith = require('gulpsmith');
 
 var jpegtran = require('imagemin-jpegtran');
 
+var marked = require('marked');
+
 var collections = require('metalsmith-collections');
 var markdown = require('metalsmith-markdown');
 var metadata = require('metalsmith-metadata');
