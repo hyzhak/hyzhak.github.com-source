@@ -1,4 +1,5 @@
 ---
+title: wave-developers
 tags: [assemble.io, bootstrap, grunt, handlebars, less, javascript, travis-ci]
 img:
     small: /images/projects/wave-developers-title.jpg

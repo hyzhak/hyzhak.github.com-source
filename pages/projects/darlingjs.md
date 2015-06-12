@@ -1,16 +1,13 @@
 ---
-# title: darling.js
-# date: 2015-04-19
+title: darling.js
 img:
     small: /images/projects/darlingjs.jpg
     square: /images/projects/darlingjs-256x256-2.jpg
-# short: Entity-Component-System based javascript game engine with dependency injections and modules.
 tags: [gamedev, javascript]
 source:
     user: darlingjs
     repo: darlingjs
-# stars: 63
-# url: http://darlingjs.github.io
+
 template: project.jade
 ---
 
