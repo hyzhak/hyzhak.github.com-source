@@ -49,12 +49,31 @@ block content
       br
       section.row
         .col-xs-6.text-right
-          iframe(src='https://ghbtns.com/github-btn.html?user=' + source.user + '&repo=' + source.repo + '&type=star&count=true&size=large',
-                 frameborder="0", scrolling="0", width="160px", height="30px")
+          <!-- Place this tag where you want the button to render. -->
+          a(href='https://github.com/' + source.user + '/' + source.repo,
+            data-style="mega",
+            data-count-href='/' + source.user + '/' + source.repo + '/fork',
+            data-count-api='/repos/' + source.user + '/' + source.repo + '#stargazers_count',
+            data-count-aria-label="# stargazers on GitHub",
+            aria-label='Star ' + source.user + '/' + source.repo + 'on GitHub').github-button Star
 
         .col-xs-6.text-left
-          iframe(src='https://ghbtns.com/github-btn.html?user=' + source.user + '&repo=' + source.repo + '&type=watch&count=true&size=large&v=2',
-                 frameborder="0", scrolling="0", width="160px", height="30px")
+          a(href='https://github.com/' + source.user + '/' + source.repo + '/fork',
+            data-style="mega",
+            data-count-href='/' + source.user + '/' + source.repo + '/network',
+            data-count-api='/repos/' + source.user + '/' + source.repo + '#forks_count',
+            data-count-aria-label="# forks on GitHub",
+            aria-label='Fork ' + source.user + '/' + source.repo + 'on GitHub').github-button Fork
+
+      //previous version
+      //works better but less native
+      //section.row
+      //  .col-xs-6.text-right
+      //    iframe(src='https://ghbtns.com/github-btn.html?user=' + source.user + '&repo=' + source.repo + '&type=star&count=true&size=large',
+      //    frameborder="0", scrolling="0", width="160px", height="30px")
+      //  .col-xs-6.text-left
+      //    iframe(src='https://ghbtns.com/github-btn.html?user=' + source.user + '&repo=' + source.repo + '&type=watch&count=true&size=large&v=2',
+      //           frameborder="0", scrolling="0", width="160px", height="30px")
 
     .row
       .col-lg-12
