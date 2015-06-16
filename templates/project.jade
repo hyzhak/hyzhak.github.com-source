@@ -40,9 +40,14 @@ block content
               i.fa.fa-angle-double-right
       .row.text-center
         .col-xs-12.try-it
-          a(href=url, target='_blank').btn.btn-danger
-            | try it &nbsp;
-            i.fa.fa-cube
+          if url
+            a(href=url, target='_blank').btn.btn-danger
+              | try it &nbsp;
+              i.fa.fa-cube
+          else if source
+            a(href='https://github.com/' + source.user + '/' + source.repo + '#readme', target='_blank').btn.btn-danger
+              | try it &nbsp;
+              i.fa.fa-cube
 
   article.container
     if source
